@@ -1,0 +1,453 @@
+########################################
+##           step1             ##
+########################################
+
+
+
+Request #1: GET /person
+=> Result: OK
+=> HTTP Status: 200
+[ {
+  "lastname" : "Baldessari",
+  "firstname" : "Martino",
+  "username" : "balde",
+  "birthdate" : "1993-01-06",
+  "email" : "federico.baldessari@studenti.unitn.it",
+  "id" : 10001,
+  "activity" : [ {
+    "name" : "tennis with friends",
+    "description" : "tennis with friends description",
+    "place" : "Milano",
+    "startDate" : "2017-12-10",
+    "activityType" : "Sport",
+    "id" : 10001
+  }, {
+    "name" : "meeting Barb",
+    "description" : "meeting Barb description",
+    "place" : "Roma",
+    "startDate" : "2017-12-13",
+    "activityType" : "Social",
+    "id" : 10002
+  } ]
+}, {
+  "lastname" : "Pizzini",
+  "firstname" : "Martina",
+  "username" : "marty",
+  "birthdate" : "1995-05-05",
+  "email" : "martina.pizzini@studenti.unitn.it",
+  "id" : 10002,
+  "activity" : [ {
+    "name" : "golf at Camp North",
+    "description" : "golf at Camp North description",
+    "place" : "Verona",
+    "startDate" : "2017-12-24",
+    "activityType" : "Sport",
+    "id" : 10003
+  } ]
+}, {
+  "lastname" : "Tassinari",
+  "firstname" : "Giovanni",
+  "username" : "giova",
+  "birthdate" : "1994-04-01",
+  "email" : "giovanni.tassinari@studenti.unitn.it",
+  "id" : 10003,
+  "activity" : [ {
+    "name" : "football at Camp North",
+    "description" : "football at Camp North description",
+    "place" : "Rovereto",
+    "startDate" : "2018-01-13",
+    "activityType" : "Sport",
+    "id" : 10004
+  } ]
+}, {
+  "lastname" : "Minigozzi",
+  "firstname" : "Giada",
+  "username" : "jade",
+  "birthdate" : "1993-07-01",
+  "email" : "giada.minigozzi@studenti.unitn.it",
+  "id" : 10004,
+  "activity" : [ {
+    "name" : "sde lesson",
+    "description" : "sde lesson description",
+    "place" : "Milano",
+    "startDate" : "2018-01-13",
+    "activityType" : "Education",
+    "id" : 10005
+  } ]
+}, {
+  "lastname" : "Bolt",
+  "firstname" : "Usain",
+  "username" : "usain",
+  "birthdate" : "1986-08-21",
+  "email" : "usain.bolt@iaaf.com",
+  "id" : 10005,
+  "activity" : [ {
+    "name" : "running for fun",
+    "description" : "running for fun description",
+    "place" : "Hong Kong",
+    "startDate" : "2018-01-13",
+    "activityType" : "Sport",
+    "id" : 10006
+  } ]
+} ]
+
+----------------------------------------
+
+########################################
+##           step2             ##
+########################################
+
+
+
+Request #2: GET /person/10001
+=> Result: OK
+=> HTTP Status: 200
+{
+  "lastname" : "Baldessari",
+  "firstname" : "Martino",
+  "username" : "balde",
+  "birthdate" : "1993-01-06",
+  "email" : "federico.baldessari@studenti.unitn.it",
+  "id" : 10001,
+  "activity" : [ {
+    "name" : "tennis with friends",
+    "description" : "tennis with friends description",
+    "place" : "Milano",
+    "startDate" : "2017-12-10",
+    "activityType" : "Sport",
+    "id" : 10001
+  }, {
+    "name" : "meeting Barb",
+    "description" : "meeting Barb description",
+    "place" : "Roma",
+    "startDate" : "2017-12-13",
+    "activityType" : "Social",
+    "id" : 10002
+  } ]
+}
+
+----------------------------------------
+
+########################################
+##           step3             ##
+########################################
+
+
+
+Request #3: PUT /person/10001 - changing firstname
+=> Result: OK
+=> HTTP Status: 200
+{
+  "lastname" : "Baldessari",
+  "firstname" : "Martino",
+  "username" : "balde",
+  "birthdate" : "1993-01-05",
+  "email" : "federico.baldessari@studenti.unitn.it",
+  "id" : 10001,
+  "activity" : [ {
+    "name" : "tennis with friends",
+    "description" : "tennis with friends description",
+    "place" : "Milano",
+    "startDate" : "2017-12-10",
+    "activityType" : "Sport",
+    "id" : 10001
+  }, {
+    "name" : "meeting Barb",
+    "description" : "meeting Barb description",
+    "place" : "Roma",
+    "startDate" : "2017-12-13",
+    "activityType" : "Social",
+    "id" : 10002
+  } ]
+}
+
+----------------------------------------
+
+########################################
+##           step4             ##
+########################################
+
+
+
+Request #4: POST /person
+=> Result: OK
+=> HTTP Status: 200
+{
+  "lastname" : "Bertamini",
+  "firstname" : "Alex",
+  "username" : "berta",
+  "birthdate" : null,
+  "email" : "alex.bertamini@studenti.unitn.it",
+  "id" : 4,
+  "activity" : [ {
+    "name" : "Golf lesson",
+    "description" : "Golf lesson with Katerina",
+    "place" : "Madrid",
+    "startDate" : null,
+    "activityType" : "Sport",
+    "id" : 5
+  } ]
+}
+
+----------------------------------------
+
+########################################
+##           step5             ##
+########################################
+
+
+
+Request #5.1: DELETE /person/4
+=> Result: WAIT
+=> HTTP Status: 200
+
+
+----------------------------------------
+
+Request #5.2: GET /person/4
+=> Result: OK
+=> HTTP Status: 404
+<!doctype html><html lang="en"><head><title>HTTP Status 404 – Not Found</title><style type="text/css">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1><hr class="line" /><p><b>Type</b> Status Report</p><p><b>Message</b> Not Found</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class="line" /><h3>Apache Tomcat/8.5.23</h3></body></html>
+
+----------------------------------------
+
+########################################
+##           step6             ##
+########################################
+
+
+
+Request #6: GET /activity_types
+=> Result: OK
+=> HTTP Status: 200
+[ "Sport", "Social", "Education", "Politics" ]
+
+----------------------------------------
+
+########################################
+##           step7             ##
+########################################
+
+
+
+Request #7_: GET /person/10001/Sport
+=> Result: WAITING
+=> HTTP Status: 200
+[ {
+  "name" : "tennis with friends",
+  "description" : "tennis with friends description",
+  "place" : "Milano",
+  "startDate" : "2017-12-10",
+  "activityType" : "Sport",
+  "id" : 10001
+} ]
+
+----------------------------------------
+
+Request #7_: GET /person/10001/Social
+=> Result: WAITING
+=> HTTP Status: 200
+[ {
+  "name" : "meeting Barb",
+  "description" : "meeting Barb description",
+  "place" : "Roma",
+  "startDate" : "2017-12-13",
+  "activityType" : "Social",
+  "id" : 10002
+} ]
+
+----------------------------------------
+
+Request #7_: GET /person/10001/Education
+=> Result: WAITING
+=> HTTP Status: 200
+[ ]
+
+----------------------------------------
+
+Request #7_: GET /person/10001/Politics
+=> Result: WAITING
+=> HTTP Status: 200
+[ ]
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Sport
+=> Result: WAITING
+=> HTTP Status: 200
+[ {
+  "name" : "running for fun",
+  "description" : "running for fun description",
+  "place" : "Hong Kong",
+  "startDate" : "2018-01-13",
+  "activityType" : "Sport",
+  "id" : 10006
+} ]
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Social
+=> Result: WAITING
+=> HTTP Status: 200
+[ ]
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Education
+=> Result: WAITING
+=> HTTP Status: 200
+[ ]
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Politics
+=> Result: WAITING
+=> HTTP Status: 200
+[ {
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 3
+} ]
+
+----------------------------------------
+
+Request #7 complessivo
+=> Result: OK
+=> HTTP Status: 200
+
+
+----------------------------------------
+
+########################################
+##           step8             ##
+########################################
+
+
+
+Request #8: GET /person/10005/Politics/3
+=> Result: OK
+=> HTTP Status: 200
+{
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 3
+}
+
+----------------------------------------
+
+########################################
+##           step9             ##
+########################################
+
+
+
+Request #9: GET /person/10005/Politics
+=> Result: wait
+=> HTTP Status: 200
+[ {
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 3
+} ]
+
+----------------------------------------
+
+Request #9: POST /person/10005/Politics
+=> Result: wait
+=> HTTP Status: 200
+{
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 6
+}
+
+----------------------------------------
+
+Request #9: GET /person/10005/Politics
+=> Result: OK
+=> HTTP Status: 200
+[ {
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 3
+}, {
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 6
+} ]
+
+----------------------------------------
+
+########################################
+##           step10             ##
+########################################
+
+
+
+Request #10.1: PUT /person/10005/Politics/6
+=> Result: OK
+=> HTTP Status: 200
+{
+  "name" : "Swimming",
+  "description" : "Swimming in the river",
+  "place" : "Adige river",
+  "startDate" : null,
+  "activityType" : "Politics",
+  "id" : 6
+}
+
+----------------------------------------
+
+Request #10.2: GET /activity_types
+=> Result: ERROR
+=> HTTP Status: 200
+[ "Sport", "Social", "Education", "Politics" ]
+
+----------------------------------------
+
+########################################
+##           step11             ##
+########################################
+
+
+
+Request #11: GET /person/10001/Social?before=2018-01-01&after=2017-01-01
+=> Result: OK
+=> HTTP Status: 200
+[ {
+  "name" : "meeting Barb",
+  "description" : "meeting Barb description",
+  "place" : "Roma",
+  "startDate" : "2017-12-13",
+  "activityType" : "Social",
+  "id" : 10002
+} ]
+
+----------------------------------------
+
+--- additional query ---
+Request #11: GET /person/10001/Social?before=2017-01-01&after=2016-01-01
+=> Result: OK
+=> HTTP Status: 200
+[ ]
+
+----------------------------------------
+

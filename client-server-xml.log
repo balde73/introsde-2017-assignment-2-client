@@ -1,0 +1,483 @@
+########################################
+##           step1             ##
+########################################
+
+
+
+Request #1: GET /person
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<people>
+    <person id="10001">
+        <activities>
+            <activity id="10001">
+                <activityType>Sport</activityType>
+                <description>tennis with friends description</description>
+                <name>tennis with friends</name>
+                <place>Milano</place>
+                <startDate>2017-12-10Z</startDate>
+            </activity>
+            <activity id="10002">
+                <activityType>Social</activityType>
+                <description>meeting Barb description</description>
+                <name>meeting Barb</name>
+                <place>Roma</place>
+                <startDate>2017-12-13Z</startDate>
+            </activity>
+        </activities>
+        <birthdate>1993-01-07Z</birthdate>
+        <email>federico.baldessari@studenti.unitn.it</email>
+        <firstname>Federico</firstname>
+        <lastname>Baldessari</lastname>
+        <username>balde</username>
+    </person>
+    <person id="10002">
+        <activities>
+            <activity id="10003">
+                <activityType>Sport</activityType>
+                <description>golf at Camp North description</description>
+                <name>golf at Camp North</name>
+                <place>Verona</place>
+                <startDate>2017-12-24Z</startDate>
+            </activity>
+        </activities>
+        <birthdate>1995-05-05Z</birthdate>
+        <email>martina.pizzini@studenti.unitn.it</email>
+        <firstname>Martina</firstname>
+        <lastname>Pizzini</lastname>
+        <username>marty</username>
+    </person>
+    <person id="10003">
+        <activities>
+            <activity id="10004">
+                <activityType>Sport</activityType>
+                <description>football at Camp North description</description>
+                <name>football at Camp North</name>
+                <place>Rovereto</place>
+                <startDate>2018-01-13Z</startDate>
+            </activity>
+        </activities>
+        <birthdate>1994-04-01Z</birthdate>
+        <email>giovanni.tassinari@studenti.unitn.it</email>
+        <firstname>Giovanni</firstname>
+        <lastname>Tassinari</lastname>
+        <username>giova</username>
+    </person>
+    <person id="10004">
+        <activities>
+            <activity id="10005">
+                <activityType>Education</activityType>
+                <description>sde lesson description</description>
+                <name>sde lesson</name>
+                <place>Milano</place>
+                <startDate>2018-01-13Z</startDate>
+            </activity>
+        </activities>
+        <birthdate>1993-07-01Z</birthdate>
+        <email>giada.minigozzi@studenti.unitn.it</email>
+        <firstname>Giada</firstname>
+        <lastname>Minigozzi</lastname>
+        <username>jade</username>
+    </person>
+    <person id="10005">
+        <activities>
+            <activity id="10006">
+                <activityType>Sport</activityType>
+                <description>running for fun description</description>
+                <name>running for fun</name>
+                <place>Hong Kong</place>
+                <startDate>2018-01-13Z</startDate>
+            </activity>
+        </activities>
+        <birthdate>1986-08-21Z</birthdate>
+        <email>usain.bolt@iaaf.com</email>
+        <firstname>Usain</firstname>
+        <lastname>Bolt</lastname>
+        <username>usain</username>
+    </person>
+</people>
+
+
+----------------------------------------
+
+########################################
+##           step2             ##
+########################################
+
+
+
+Request #2: GET /person/10001
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<person id="10001">
+    <activities>
+        <activity id="10001">
+            <activityType>Sport</activityType>
+            <description>tennis with friends description</description>
+            <name>tennis with friends</name>
+            <place>Milano</place>
+            <startDate>2017-12-10Z</startDate>
+        </activity>
+        <activity id="10002">
+            <activityType>Social</activityType>
+            <description>meeting Barb description</description>
+            <name>meeting Barb</name>
+            <place>Roma</place>
+            <startDate>2017-12-13Z</startDate>
+        </activity>
+    </activities>
+    <birthdate>1993-01-07Z</birthdate>
+    <email>federico.baldessari@studenti.unitn.it</email>
+    <firstname>Federico</firstname>
+    <lastname>Baldessari</lastname>
+    <username>balde</username>
+</person>
+
+
+----------------------------------------
+
+########################################
+##           step3             ##
+########################################
+
+
+
+Request #3: PUT /person/10001 - changing firstname
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<person id="10001">
+    <activities>
+        <activity id="10001">
+            <activityType>Sport</activityType>
+            <description>tennis with friends description</description>
+            <name>tennis with friends</name>
+            <place>Milano</place>
+            <startDate>2017-12-10Z</startDate>
+        </activity>
+        <activity id="10002">
+            <activityType>Social</activityType>
+            <description>meeting Barb description</description>
+            <name>meeting Barb</name>
+            <place>Roma</place>
+            <startDate>2017-12-13Z</startDate>
+        </activity>
+    </activities>
+    <birthdate>1993-01-06Z</birthdate>
+    <email>federico.baldessari@studenti.unitn.it</email>
+    <firstname>Martino</firstname>
+    <lastname>Baldessari</lastname>
+    <username>balde</username>
+</person>
+
+
+----------------------------------------
+
+########################################
+##           step4             ##
+########################################
+
+
+
+Request #4: POST /person
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<person id="1">
+    <activities>
+        <activity id="2">
+            <activityType>Sport</activityType>
+            <description>Golf lesson with Katerina</description>
+            <name>Golf lesson</name>
+            <place>Madrid</place>
+        </activity>
+    </activities>
+    <email>alex.bertamini@studenti.unitn.it</email>
+    <firstname>Alex</firstname>
+    <lastname>Bertamini</lastname>
+    <username>berta</username>
+</person>
+
+
+----------------------------------------
+
+########################################
+##           step5             ##
+########################################
+
+
+
+Request #5.1: DELETE /person/1
+=> Result: WAIT
+=> HTTP Status: 200
+
+
+----------------------------------------
+
+Request #5.2: GET /person/1
+=> Result: OK
+=> HTTP Status: 404
+<!doctype html><html lang="en"><head><title>HTTP Status 404 – Not Found</title><style type="text/css">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1><hr class="line" /><p><b>Type</b> Status Report</p><p><b>Message</b> Not Found</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class="line" /><h3>Apache Tomcat/8.5.23</h3></body></html>
+
+----------------------------------------
+
+########################################
+##           step6             ##
+########################################
+
+
+
+Request #6: GET /activity_types
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activityTypes>
+    <activity_type>Sport</activity_type>
+    <activity_type>Social</activity_type>
+    <activity_type>Education</activity_type>
+</activityTypes>
+
+
+----------------------------------------
+
+########################################
+##           step7             ##
+########################################
+
+
+
+Request #7_: GET /person/10001/Sport
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10001">
+        <activityType>Sport</activityType>
+        <description>tennis with friends description</description>
+        <name>tennis with friends</name>
+        <place>Milano</place>
+        <startDate>2017-12-10Z</startDate>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+Request #7_: GET /person/10001/Social
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10002">
+        <activityType>Social</activityType>
+        <description>meeting Barb description</description>
+        <name>meeting Barb</name>
+        <place>Roma</place>
+        <startDate>2017-12-13Z</startDate>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+Request #7_: GET /person/10001/Education
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities/>
+
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Sport
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10006">
+        <activityType>Sport</activityType>
+        <description>running for fun description</description>
+        <name>running for fun</name>
+        <place>Hong Kong</place>
+        <startDate>2018-01-13Z</startDate>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Social
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities/>
+
+
+----------------------------------------
+
+Request #7_: GET /person/10005/Education
+=> Result: WAITING
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities/>
+
+
+----------------------------------------
+
+Request #7 complessivo
+=> Result: OK
+=> HTTP Status: 200
+
+
+----------------------------------------
+
+########################################
+##           step8             ##
+########################################
+
+
+
+Request #8: GET /person/10005/Sport/10006
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activity id="10006">
+    <activityType>Sport</activityType>
+    <description>running for fun description</description>
+    <name>running for fun</name>
+    <place>Hong Kong</place>
+    <startDate>2018-01-13Z</startDate>
+</activity>
+
+
+----------------------------------------
+
+########################################
+##           step9             ##
+########################################
+
+
+
+Request #9: GET /person/10005/Sport
+=> Result: wait
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10006">
+        <activityType>Sport</activityType>
+        <description>running for fun description</description>
+        <name>running for fun</name>
+        <place>Hong Kong</place>
+        <startDate>2018-01-13Z</startDate>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+Request #9: POST /person/10005/Sport
+=> Result: wait
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activity id="3">
+    <activityType>Sport</activityType>
+    <description>Swimming in the river</description>
+    <name>Swimming</name>
+    <place>Adige river</place>
+</activity>
+
+
+----------------------------------------
+
+Request #9: GET /person/10005/Sport
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10006">
+        <activityType>Sport</activityType>
+        <description>running for fun description</description>
+        <name>running for fun</name>
+        <place>Hong Kong</place>
+        <startDate>2018-01-13Z</startDate>
+    </activity>
+    <activity id="3">
+        <activityType>Sport</activityType>
+        <description>Swimming in the river</description>
+        <name>Swimming</name>
+        <place>Adige river</place>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+########################################
+##           step10             ##
+########################################
+
+
+
+Request #10.1: PUT /person/10005/Sport/3
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activity id="3">
+    <activityType>Politics</activityType>
+    <description>Swimming in the river</description>
+    <name>Swimming</name>
+    <place>Adige river</place>
+</activity>
+
+
+----------------------------------------
+
+Request #10.2: GET /activity_types
+=> Result: ERROR
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activityTypes>
+    <activity_type>Sport</activity_type>
+    <activity_type>Social</activity_type>
+    <activity_type>Education</activity_type>
+    <activity_type>Politics</activity_type>
+</activityTypes>
+
+
+----------------------------------------
+
+########################################
+##           step11             ##
+########################################
+
+
+
+Request #11: GET /person/10001/Social?before=2018-01-01&after=2017-01-01
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities>
+    <activity id="10002">
+        <activityType>Social</activityType>
+        <description>meeting Barb description</description>
+        <name>meeting Barb</name>
+        <place>Roma</place>
+        <startDate>2017-12-13Z</startDate>
+    </activity>
+</activities>
+
+
+----------------------------------------
+
+--- additional query ---
+Request #11: GET /person/10001/Social?before=2017-01-01&after=2016-01-01
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-16"?>
+<activities/>
+
+
+----------------------------------------
+
